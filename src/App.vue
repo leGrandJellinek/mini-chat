@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrapper">
+        <Chat  
+        :chatUsers="chatUsers"
+        :send="send"
+        :modalWindow="modalWindow"/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Chat from '@/components/Chat.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    components: {
+        Chat,
+    },
+    data(){
+        return {
+            chatUsers: [{
+                id: 1,
+                name: 'Жыленкек',
+                status: 'Онлайн',
+                img: 'ava1.jpg',
+                text: '',
+            },
+            {   
+                id: 2,
+                name: 'Nilkek',
+                status: 'Онлайн',
+                img: 'ava2.jpg',
+                text: '',
+            }],
+            modalWindow: false,
+        }
+    }
 }
-</script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</script>
