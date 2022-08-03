@@ -2,8 +2,8 @@
     <div class="wrapper">
         <Chat  
         :chatUsers="chatUsers"
-        :send="send"
-        :modalWindow="modalWindow"/>
+        :modalWindow="modalWindow"
+        :usersMsgs="usersMsgs"/>
     </div>
 </template>
 
@@ -32,6 +32,7 @@ export default {
                 text: '',
             }],
             modalWindow: false,
+            usersMsgs:[]
         }
     }
 }
